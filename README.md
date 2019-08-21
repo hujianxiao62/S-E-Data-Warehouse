@@ -20,11 +20,11 @@ Node.js, Express, EJS, jQuery, Bootstrap, MySQL
 ![Manager ](./docs/images/manager.png)
 ![Manager ](./docs/images/manager1.png)
 
-2. Check/Edit Holiday
+3. Check/Edit Holiday
 
 ![Holiday ](./docs/images/holiday.png)
 
-2. Check/Edit Population
+4. Check/Edit Population
 
 ![Population ](./docs/images/population.png)
 
