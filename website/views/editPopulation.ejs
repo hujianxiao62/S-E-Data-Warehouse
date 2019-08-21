@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+<form action="/editPopulation" method="post">
+  <div class="form-group">
+    City:
+    <input class="form-control" type="text" name="city">
+    State:
+    <input class="form-control" type="text" name="state">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button">SEARCH</button>
+</form>
+
+
+<table>
+  <tr>
+    <th>City</th>  <th>State</th>  <th>Population</th>  <th></th>
+  </tr>
+  <% cityR.forEach(function(e) { %>
+    <% var value = {page:'/populationDetail', city:e.city, state:e.state, population:e.population}; %>
+   <tr>
+      <td> <%= e.city %> </td>
+      <td> <%= e.state %> </td>
+      <td> <%= e.population %> </td>
+      <td> <a onclick={newPopup(<%- JSON.stringify(value) %>)}>edit</a> </td>
+    </tr>
+  <% }) %>
+</table>
+
+<h1>Usage</h1>
+<ul>
+  <li>Fuzzy search by city or state or both.</li>
+</ul>
+
+<script type="text/javascript">
+function newPopup(value)
+{
+  var newpop = window.open(value.page+'?trivial=999'+'&city='+value.city+'&state='+value.state+'&population='+value.population,'height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+}
+</script>
+
+<%- include("partials/footer"); -%>

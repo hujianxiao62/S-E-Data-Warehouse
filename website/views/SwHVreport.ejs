@@ -1,0 +1,51 @@
+<%- include("partials/header"); -%>
+<h1>State with Highest Volume for Each Category</h1>
+
+<form id="tableForm" action="/SwHVreport" method="post">
+  <select class="selectpicker" data-style="btn-info" name="selectpicker">
+    <optgroup label="Select Year">
+
+      <% swhY.forEach(function(e) { %>
+      <option name=<%= e.year %> value=<%= e.year %>> <%= e.year %> </option>
+      <% }) %>
+    </optgroup>
+  </select>
+
+  <select class="selectpicker" data-style="btn-info" name="selectpicker">
+    <optgroup label="Select Month">
+
+      <% swhM.forEach(function(e) { %>
+      <option name=<%= e %> value=<%= e %>> <%= e %> </option>
+      <% }) %>
+    </optgroup>
+  </select>
+
+  <input type="submit" value="VIEW" />
+</form>
+
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Most Sold State </th>
+    <th>Total Units Sold</th>
+    <th></th>
+  </tr>
+  <% swhR.forEach(function(e) { %>
+  <% var value = {page:'/SwHVDetail', cn:encodeURIComponent(e.category_name), state:encodeURIComponent(e.highest_sales_state), year:swhYM[0], month:swhYM[1]}; %>
+  <tr>
+    <td> <%= e.category_name %> </td>
+    <td> <%= e.highest_sales_state %> </td>
+    <td> <%= e.total_units %> </td>
+    <td> <a onclick={newPopup(<%- JSON.stringify(value) %>)}>detail</a> </td>
+  </tr>
+  <% }) %>
+</table>
+
+<script type="text/javascript">
+  function newPopup(value) {
+    var newpop = window.open(value.page + '?trivial=999' + '&cn=' + value.cn + '&state=' + value.state + '&year=' + value.year + '&month=' + value.month,  'height=600,width=800,left=200,top=200,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+  }
+</script>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<h1>MENU</h1>
+<h3>General Info</h3>
+<p> Total Stores: <%= sNum %> </p>
+<p> Total Manufacturers: <%= mfNum %> </p>
+<p> Total Products: <%= pNum %> </p>
+<p> Total Managers: <%= mngNum %> </p>
+<h3>Edit</h3>
+<ul class="menuBtn">
+  <li><a href="/editHoliday">Holiday</a></li>
+  <li><a href="/editManager">Manager</a></li>
+  <li><a href="/editPopulation">Population</a></li>
+</ul>
+<h3>View</h3>
+<ul>
+  <li><a href="/manufacturerReport">Manufacturer's report</a></li>
+  <li><a href="/categoryReport">Category Report</a></li>
+  <li><a href="/AvPReport">Acutal verus Predicted Revenue for GPS units Report</a></li>
+  <li><a href="/SRbYbSreport">Store Revenue by Year by State Report</a></li>
+  <li><a href="/acReport">Air Conditioners on Groudhog Day Report</a></li>
+  <li><a href="/SwHVreport">State with Highest Volume for Each Category Report</a></li>
+  <li><a href="/RbPReport">Revenue by Population Report</a></li>
+</ul>
+
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,36 @@
+<%- include("partials/header"); -%>
+<h1>Edit Holiday</h1>
+<form  method="post">
+  <div class="form-group">
+    Start Date:
+    <input class="form-control" type="text" name="startDate" placeholder="YYYY-MM-DD">
+    End Date:
+    <input class="form-control" type="text"name="endDate" placeholder="YYYY-MM-DD">
+    Holiday Name:
+    <input class="form-control" type="text"name="holiday" >
+  </div>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/searchHoliday" >SEARCH</button>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/addHoliday" >UPDATE</button>
+</form>
+
+<table>
+  <tr>
+    <th>Date</th>  <th>Holiday Name</th><th></th>
+  </tr>
+<% dateR.forEach(function(e) { %>
+    <% var value = {page:'/holidayDetail', date:e.date, holiday:encodeURIComponent(e.holiday_name)}; %>
+    <tr>
+       <td> <%= e.date.getYear()+1900 %>-<%= e.date.getMonth()+1 %>-<%= e.date.getDate() %> </td>
+       <td> <%= e.holiday_name %> </td>
+     </tr>
+<% }) %>
+</table>
+
+<h1>Usage</h1>
+<ul>
+  <li>Check all holidays by entering empty time period and holiday name.</li>
+  <li>Search by time period with empty holiday name</li>
+  <li>Fuzzy search by holiday name with empty time period.</li>
+  <li>Update holiday with start date and holiday.</li>
+</ul>
+<%- include("partials/footer"); -%>

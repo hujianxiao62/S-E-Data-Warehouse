@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+<h1>Actual vs. Predicted Revenue for GPS Units Report</h1>
+
+<table>
+  <tr>
+    <th>Prouct ID</th>  <th>Name</th>  <th>Retail Price</th> <th>Number of Sold</th>  <th>Sold at Discount</th> <th>Sold at Retail Price</th> <th>Actual Revenue</th> <th>Predicted Revenue</th> <th>Difference</th>
+  </tr>
+  <% avpR.forEach(function(e) { %>
+   <tr>
+      <td> <%= e.productID %> </td>
+      <td> <%= e.product_name %> </td>
+      <td> <%= e.retail_price %> </td>
+      <td> <%= e.numbers_of_sold %> </td>
+      <td> <%= e.numbers_of_sold_at_discount %> </td>
+      <td> <%= e.numbers_of_sold_at_retail_price %> </td>
+      <td> <%= e.actual_revenue.toFixed(0) %> </td>
+      <td> <%= e.predicted_revenue.toFixed(0) %> </td>
+      <td> <%= e.difference_of_revenue.toFixed(0) %> </td>
+    </tr>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,20 @@
+
+<%- include("partials/header"); -%>
+    <h1>Update population</h1>
+    <form class="" action="/populationDetail" method="post">
+      <div class="form-group">
+        <label>City: </label>
+        <p class="form-control" name="city" ><%=popQuery.city %></p>
+        <label>State: </label>
+        <p class="form-control" name="state" ><%=popQuery.state %></p>
+        <label>Population</label>
+        <input class="form-control" type="text" name="population" value= <%=popQuery.population%>></input>
+      </div>
+      <button class="btn btn-primary" type="submit" name="button"><%=popDetailBtn%></button>
+    </form>
+
+  <h1>Usage</h1>
+  <ul>
+    <li>Update the population with new integer bigger than 0 less than 2 billion.</li>
+  </ul>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,75 @@
+Here is data warehouse user interface. 
+
+1. Main menu
+  - access all functionalities of the system
+  - statistics, including 1000 total stores, 1000 total manufacturers, 24300 products and 950 managers. 
+  - 3 maintenance functionalities: one for holiday information, one for managers information, and one for population information. 
+
+  - 7 reports for S&E data. 
+
+2. Holiday info maintenance
+
+  - view: 1) Check all holidays by enter empty time period and holiday name.
+          2) Search holiday by time period - the date range and format will be checked 
+          3) Search by holiday name
+  - add: 2006-01-01 New Year's Day
+  - return to home page
+
+3. Manager info maintenance
+
+  1) Fuzzy search by first name or last name - Sam
+  2) Search by email.
+  3) Search by store number.
+  4) Add a manager - name:test, email: test@gatech.edu; - inactive
+  5) Assign store 1 to the test user
+  6) Try to remove a manager - test user; cannot remove, has to un-assign first
+  7) Un-assign store for test user
+  8) Remove the test user
+
+4. Population info maintenance
+
+  - search by city or state
+  - update population
+
+5. Report 1 - Manufacturer report
+  - The granular report shows the number of product, mean, min, max retail price for each of the manufacturer
+  - ordered by average retail price in descending order
+  - For each manufacturer, we have a detailed report
+  - The detailed report shows the number of product, mean, min, max retail price, and max discount for the selected manufacture
+  - It also has details for each product from the selected manufacturer, including the product id, name, category, retail price; ordered by the retail price
+
+6. Report 2 - Category report
+  - The category report shows the category name, number of precut, number of manufacturers, and the average retail price for each category; 
+
+7. Report 3 - Actual vs predicted revenue for GPS unit 
+  - For each product in the GPS unit, we calculate the total number of sold product, the number sold at discount and sold at retail price. We also calculated the actual revenue and predicted revenue. 
+  - The report only shows the precut with a difference between actual revenue and predicted revenue greater than 5000.
+  - The report is ordered by the difference. 
+
+8. Report 4 - Store revenue by year by state
+
+  - select state
+  - the report will list all the stores in the selected states, with the store number, store address, city name, and total revenue for each year.
+  - the report is ordered by sales year in ascending order and then by revenue in descending order.
+  - in the year of 2000, store 514 has the highest revenue in state Arizona. 
+
+9. Report 5 - Air Conditioners on Groundhog Day
+
+  - in this report, for each year, we populated the total number of items sold that year in the air conditioning category, the average number of units sold per day, and the total number of units sold on Groundhog Day (February 2) of that year. 
+  - the report is sorted on the year in ascending order.
+
+10. Report 6 - State with Highest Volume for Each Category
+
+  - select year and month
+  - we can see for each category, the state that sold the highest number of units in that category, and the number of units that were sold by stores in that state. 
+  - it's ordered by the category name.
+  - for each category, there is a detailed report
+  - in the detailed report, all the stores in the state with highest number of sold units, with the store ID, store address, city, store manager and manager's email.
+
+11. Report 7 - Revenue by Population
+  - The cities are categorized by the population.
+  - This report has the total revenue for each population category by year. 
+
+
+
+

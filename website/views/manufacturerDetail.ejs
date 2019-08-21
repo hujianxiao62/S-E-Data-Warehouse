@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+<h1><%= mfN %>: </h1>
+
+<h3>General:</h3>
+<table>
+  <tr>
+    <th>Total Products</th>
+    <th>Average Retail Price</th>
+    <th>Min Retail Price</th>
+    <th>Max Retail Price</th>
+        <th>Max Discount</th>
+  </tr>
+  <tr>
+    <td> <%= Pnum %> </td>
+    <td> <%= Pavg %> </td>
+    <td> <%= Pmax %> </td>
+    <td> <%= Pmin %> </td>
+        <td> <%= md %> </td>
+  </tr>
+</table>
+
+<h3>Products:</h3>
+
+<table>
+  <tr>
+    <th>Product ID</th>
+    <th>Name</th>
+    <th>Categories</th>
+    <th>Price</th>
+  </tr>
+  <% Plst.forEach(function(e) { %>
+  <tr>
+    <th><%= e.product_ID %></th>
+    <th><%= e.product_name %></th>
+    <th><%= e.category_name %></th>
+    <th><%= e.price.toFixed(2) %></th>
+  </tr>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>

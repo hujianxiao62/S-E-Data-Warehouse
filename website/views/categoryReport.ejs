@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+<h1>Category Report</h1>
+
+<table>
+  <tr>
+    <th>Category Name</th>  <th>Number of Products</th>  <th>Number of Manufacturers</th>  <th>Average Retail Price</th>
+  </tr>
+  <% catR.forEach(function(e) { %>
+  <% var value = {page:'/manufacturerDetail'}; %>
+   <tr>
+      <td> <%= e.category_name %> </td>
+      <td> <%= e.numbers_of_products %> </td>
+      <td> <%= e.numbers_of_manufacturer %> </td>
+      <td> <%= e.average_retail_price.toFixed(2) %> </td>
+    </tr>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>

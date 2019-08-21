@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<h3><%= date %> </h3>
+<h3>State: <%= state %> </h3>
+<h3>Category: <%= cat %> </h3>
+
+<table>
+  <tr>
+    <th>Store</th>
+    <th>Store Address</th>
+    <th>City</th>
+    <th>Store Manager</th>
+    <th>Manager Email</th>
+  </tr>
+
+  <% SVR.forEach(function(e) { %>
+  <tr>
+    <th><%= e.store_number %></th>
+    <th><%= e.store_address %></th>
+    <th><%= e.city %></th>
+    <th><%= e.manager_name %></th>
+    <th><%= e.manager_email %></th>
+  </tr>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>

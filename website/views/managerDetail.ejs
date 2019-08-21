@@ -1,0 +1,26 @@
+<%- include("partials/header"); -%>
+<h1>Edit Manager</h1>
+<form class=""  method="post">
+  <div class="form-group">
+    <label>Name</label>
+    <p class="form-control" name="date"><%=mngQuery.name %></p>
+    <label>Email</label>
+    <p class="form-control" name="date"><%=mngQuery.email%></p>
+    <label>Store Number</label>
+    <% if(mngQuery.id == 0){%>
+          <input class="form-control" type="text" name="managerStoreNum" value=></input>
+     <% } else {%>
+    <input class="form-control" type="text" name="managerStoreNum" value=<%=mngQuery.id%>></input>
+         <% }%>
+  </div>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/assignManager">Assign</button>
+    <button class="btn btn-primary" type="submit" name="button" formaction="/unassignManager">Unassign</button>
+</form>
+
+<h1>Usage</h1>
+<ul>
+
+  <li>Assign an inactive manager with store number.</li>
+  <li>Unassign an active manager with store number.</li>
+</ul>
+<%- include("partials/footer"); -%>

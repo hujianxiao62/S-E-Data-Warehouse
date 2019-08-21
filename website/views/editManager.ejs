@@ -1,0 +1,56 @@
+<%- include("partials/header"); -%>
+
+<form method="post">
+  <div class="form-group">
+    Manager Name:
+    <input class="form-control" type="text" name="managerName" placeholder="firstname lastname">
+    Email:
+    <input class="form-control" name="managerEmail">
+    Store Number:
+    <input class="form-control" name="managerStoreNum">
+  </div>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/searchManager">SEARCH</button>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/addManager">ADD</button>
+  <button class="btn btn-primary" type="submit" name="button" formaction="/removeManager">REMOVE</button>
+</form>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Store Number</th>
+    <th></th>
+  </tr>
+  <% mngR.forEach(function(e) { %>
+  <% var status = 'active';  var sID = e.store_number %>
+  <% if(e.storeIDZ === 0){status = 'inactive'; sID = ''; } %>
+  <% var value = {page:'/managerDetail', email:e.email, name:encodeURIComponent(e.manager_name), id:e.store_number}; %>
+  <tr>
+    <td> <%= e.email %> </td>
+    <td> <%= e.manager_name %> </td>
+    <td> <%= status %> </td>
+    <td> <%= sID %> </td>
+    <td> <a onclick={newPopup(<%- JSON.stringify(value) %>)}>Assign/Unassign</a> </td>
+  </tr>
+
+  <% }) %>
+</table>
+
+<h1>Usage</h1>
+<ul>
+  <li>Fuzzy search by first name or last name.</li>
+  <li>Search by email.</li>
+  <li>Search by store number.</li>
+  <li>Add manager by name and email.</li>
+  <li>Remove manager by email.</li>
+</ul>
+
+<script type="text/javascript">
+  function newPopup(value) {
+    var newpop = window.open(value.page + '?trivial=999' + '&name=' + value.name + '&email=' + value.email + '&id=' + value.id,
+      'height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+  }
+</script>
+
+<%- include("partials/footer"); -%>

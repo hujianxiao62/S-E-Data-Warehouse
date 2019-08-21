@@ -1,0 +1,28 @@
+<%- include("partials/header"); -%>
+<h1>Manufacturer Report</h1>
+
+<table>
+  <tr>
+    <th>Manufacturer Name</th>  <th>Number of Products</th>  <th>Average Retail Price</th>  <th>Min Retail Price</th>  <th>Max Retail Price</th> <th>Detail</th>
+  </tr>
+  <% mfR.forEach(function(e) { %>
+  <% var value = {page:'/manufacturerDetail', mfNm:encodeURIComponent(e.manufacturer_name)}; %>
+   <tr>
+      <td> <%= e.manufacturer_name %> </td>
+      <td> <%= e.numbers_of_products %> </td>
+      <td> <%= e.average_retail_price.toFixed(2) %> </td>
+      <td> <%= e.minimum_retail_price.toFixed(2) %> </td>
+      <td> <%= e.maximum_retail_price.toFixed(2) %> </td>
+      <td> <a onclick={newPopup(<%- JSON.stringify(value) %>)}>detail</a> </td>
+    </tr>
+  <% }) %>
+</table>
+
+
+<script type="text/javascript">
+  function newPopup(value) {
+    var newpop = window.open(value.page + '?trivial=999' + '&mfNm=' + value.mfNm,  'height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes');
+  }
+</script>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,19 @@
+<%- include("partials/header"); -%>
+<h1>Revenue by Population Report</h1>
+
+<table>
+  <tr>
+    <th>Year</th>  <th>Small City (<3.7M)</th>  <th>Medium City (<6.7M)</th> <th>Large City (<9M)</th> <th>Extra Large City (>=9M)</th>
+  </tr>
+  <% RbPR.forEach(function(e) { %>
+   <tr>
+      <td> <%= e.sales_year %> </td>
+      <td> <%= e.Small.toFixed(0) %> </td>
+      <td> <%= e.Medium.toFixed(0) %> </td>
+      <td> <%= e.Large.toFixed(0) %> </td>
+      <td> <%= e.Extra_Large.toFixed(0) %> </td>
+      </tr>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>

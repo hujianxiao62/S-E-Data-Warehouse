@@ -1,0 +1,11 @@
+SQL Files Locations:
+Seed data: SQL/seed_data.sql
+Schema: SQL/team024_p2_schema.sql
+Edit and Report: SQL/Edit&Report.sql
+
+
+Team024:
+Jiacheng Chen    email: jchen857@gatech.edu
+Jianxiao Hu      email: jhu369@gatech.edu
+Tong Wu          email: twu76@gatech.edu
+Yuxi Shan        email: yshan34@gatech.edu

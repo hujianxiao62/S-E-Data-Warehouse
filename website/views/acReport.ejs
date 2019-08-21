@@ -1,0 +1,17 @@
+<%- include("partials/header"); -%>
+<h1>Air Conditioners on Groudhog Day Report</h1>
+
+<table>
+  <tr>
+    <th>Year</th>  <th>Total Unit Sold</th>  <th>Average Unit Sold per Day</th>  <th>Unit Sold on Groundhog Day</th>
+  </tr>
+  <% acR.forEach(function(e) { %>
+   <tr>
+      <td> <%= e.sales_year %> </td>
+      <td> <%= e.total_number_of_sold %> </td>
+      <td> <%= e.average_numbers_of_sold.toFixed(0) %> </td>
+      <td> <%= e.numbers_of_sold_on_groundhog %> </td>
+  <% }) %>
+</table>
+
+<%- include("partials/footer"); -%>
